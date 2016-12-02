@@ -1,18 +1,28 @@
-#ifndef UF
-#define UF
+#ifndef UF_HPP
+#define UF_HPP
 
 class UF
 {
 public:
   
-  UF(int N) : arr(new int[N]) {}
+  UF(int N) : SIZE(N), id(new int [N])
+  {
+    for (int i = 0; i < N; ++i) {
+      id[i] = i;
+    }
+  }
+  
+  virtual void unify(int p, int q) = 0;
+  
+  virtual bool connected(int p, int q) = 0;
   
   virtual ~UF()
-  { delete [] arr; }
+  { delete [] id; }
   
 protected:
   
-  int *arr;
-}
+  const int SIZE;
+  int *id;
+};
 
 #endif
