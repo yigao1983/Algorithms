@@ -1,15 +1,15 @@
-#ifndef QUICKFIND_HPP
-#define QUICKFIND_HPP
+#ifndef QUICKFINDUF_HPP
+#define QUICKFINDUF_HPP
 
 #include "UF.hpp"
 
-class QuickFind : public UF
+class QuickFindUF : public UF
 {
 public:
   
-  QuickFind(int N) : UF(N) {}
+  QuickFindUF(int N) : UF(N) {}
   
-  virtual ~QuickFind() {}
+  virtual ~QuickFindUF() {}
   
   void unify(int p, int q)
   {

@@ -2,7 +2,7 @@
 #include <string>
 #include <fstream>
 #include <sstream>
-#include "QuickFind.hpp"
+#include "QuickFindUF.hpp"
 
 using namespace std;
 
@@ -23,7 +23,7 @@ int main(int argc, char **argv)
   
   istringstream(line) >> N;
   
-  QuickFind uf(N);
+  QuickFindUF uf(N);
   
   while (getline(uf_file, line)) {
     int p, q;
