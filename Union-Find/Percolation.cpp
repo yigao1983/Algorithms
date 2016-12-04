@@ -112,6 +112,17 @@ bool Percolation::isFull(int row, int col)
 bool Percolation::percolates()
 { return uf.connected(TOP, BOTTOM); }
 
+int Percolation::countOpen()
+{
+  int num_open = 0;
+  
+  for (int idx = 0; idx < SIZE*SIZE; ++idx) {
+    num_open += grid[idx];
+  }
+  
+  return num_open;
+}
+
 bool Percolation::isConnected(int row_i, int col_i, int row_j, int col_j)
 {
   checkBounds(row_i, col_i);

@@ -1,35 +1,29 @@
 #include <iostream>
 #include <iomanip>
-#include "Percolation.hpp"
+#include <sstream>
+#include "PercolationStats.hpp"
 
 using namespace std;
 
 int main(int argc, char **argv)
 {
-  const int N = 5;
-  Percolation perc(N);
+  int n, trials;
   
-  perc.open(1, 1);
-  perc.open(1, 3);
-  perc.open(2, 3);
-  perc.open(3, 3);
-  perc.open(3, 4);
-  perc.open(4, 4);
-  perc.open(5, 4);
-  perc.open(5, 1);
+  if (argc < 3) {
+    cout << "Not enough input" << endl;
+    return 1;
+  }
   
-  perc.display();
-  /*
-  cout << boolalpha << perc.isFull(1, 1) << endl;
-  cout << boolalpha << perc.isConnected(2, 3, 3, 3) << endl;
-  cout << boolalpha << perc.isFull(2, 3) << endl;
-  cout << boolalpha << perc.isFull(3, 3) << endl;
-  cout << boolalpha << perc.isFull(5, 1) << endl;
-  */
-  cout << boolalpha << perc.percolates() << endl;
-  cout << boolalpha << perc.isOpen(5, 1) << endl;
-  cout << boolalpha << perc.isFull(5, 1) << endl;
-  cout << boolalpha << perc.isFull(1, 1) << endl;
+  istringstream(argv[1]) >> n;
+  istringstream(argv[2]) >> trials;
+  
+  PercolationStats perc_stats(n, trials);
+  
+  cout << "mean = " << perc_stats.mean() << endl;
+  cout << "stddev = " << perc_stats.stddev() << endl;
+  cout << "95\% conficence interval = "
+       << perc_stats.confidenceLo() << " "
+       << perc_stats.confidenceHi() << endl;
   
   return 0;
 }

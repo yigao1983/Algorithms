@@ -13,7 +13,8 @@ public:
   bool isOpen(int row, int col);
   bool isFull(int row, int col);
   bool percolates();
-  
+  int countOpen();
+  // For debug
   bool isConnected(int row_i, int col_i, int row_j, int col_j);
   void display();
   
