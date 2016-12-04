@@ -25,7 +25,7 @@ int main(int argc, char **argv)
   
   istringstream(line) >> N;
   
-  WeightedQuickUnionUF uf(N);
+  QuickUnionUF uf(N);
   
   while (getline(uf_file, line)) {
     int p, q;
