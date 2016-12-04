@@ -1,6 +1,8 @@
 #ifndef QUICKUNIONUF_HPP
 #define QUICKUNIONUF_HPP
 
+#include "UF.hpp"
+
 class QuickUnionUF : public UF
 {
 public:
@@ -10,14 +12,10 @@ public:
   virtual ~QuickUnionUF() {}
   
   void unify(int p, int q)
-  {
-    id[root(p)] = root(q);
-  }
+  { id[root(p)] = root(q); }
   
   bool connected(int p, int q)
-  {
-    return root(p) == root(q);
-  }
+  { return root(p) == root(q); }
   
 protected:
   

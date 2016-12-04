@@ -3,6 +3,8 @@
 #include <fstream>
 #include <sstream>
 #include "QuickFindUF.hpp"
+#include "QuickUnionUF.hpp"
+#include "WeightedQuickUnionUF.hpp"
 
 using namespace std;
 
@@ -23,7 +25,7 @@ int main(int argc, char **argv)
   
   istringstream(line) >> N;
   
-  QuickFindUF uf(N);
+  WeightedQuickUnionUF uf(N);
   
   while (getline(uf_file, line)) {
     int p, q;
@@ -31,6 +33,10 @@ int main(int argc, char **argv)
     if (!uf.connected(p, q)) {
       uf.unify(p, q);
     }
+  }
+  
+  for (int i = 0; i < N; ++i) {
+    cout << uf.connected(i, 9) << endl;
   }
   
   uf_file.close();
