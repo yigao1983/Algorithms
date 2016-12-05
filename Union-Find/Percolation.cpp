@@ -90,8 +90,11 @@ void Percolation::open(int row, int col)
     }
   }
   // Bottom row case (Note: have to be after union operations between neighboring sites)
-  if (row == SIZE && isFull(row, col)) {
-    uf.unify(BOTTOM, idx);
+  for (int col_last = 1; col_last <= SIZE; ++col_last) {
+    int row_last = SIZE;
+    if (isFull(row_last, col_last)) {
+      uf.unify(BOTTOM, idx);
+    }
   }
 }
 
