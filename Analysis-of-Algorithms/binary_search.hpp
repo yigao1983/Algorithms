@@ -19,7 +19,7 @@ int binary_search(int n, const T a[], T key)
     }
   }
   
-  throw std::invalid_argument("Invalid key\n");
+  return -1;
 }
 
 // Ascending order binary search
@@ -37,7 +37,7 @@ int binary_search_acs(int lo, int hi, const T a[], T key)
     }
   }
   
-  throw std::invalid_argument("Invalid key\n");
+  return -1;
 }
 
 // Descending order binary search
@@ -55,7 +55,7 @@ int binary_search_decs(int lo, int hi, const T a[], T key)
     }
   }
   
-  throw std::invalid_argument("Invalid key\n");
+  return -1;
 }
 
 #endif
