@@ -19,7 +19,7 @@ int main(int argc, char **argv)
   steady_clock::time_point t_beg = steady_clock::now();
   
   try {
-    cout << binary_search(N, arr, 0) << endl;
+    cout << binary_search(N, arr, 3096) << endl;
   } catch (std::exception &e) {
     cerr << e.what();
   }
