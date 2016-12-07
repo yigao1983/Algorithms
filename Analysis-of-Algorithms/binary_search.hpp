@@ -1,8 +1,6 @@
 #ifndef BINARYSEARCH_HPP
 #define BINARYSEARCH_HPP
 
-#include <stdexcept>
-
 template<class T>
 int binary_search(int n, const T a[], T key)
 {
@@ -24,7 +22,7 @@ int binary_search(int n, const T a[], T key)
 
 // Ascending order binary search
 template<class T>
-int binary_search_acs(int lo, int hi, const T a[], T key)
+int binary_search_asc(int lo, int hi, const T a[], T key)
 {
   while (lo <= hi) {
     int mid = (lo + hi) / 2;
@@ -42,7 +40,7 @@ int binary_search_acs(int lo, int hi, const T a[], T key)
 
 // Descending order binary search
 template<class T>
-int binary_search_decs(int lo, int hi, const T a[], T key)
+int binary_search_desc(int lo, int hi, const T a[], T key)
 {
   while (lo <= hi) {
     int mid = (lo + hi) / 2;
